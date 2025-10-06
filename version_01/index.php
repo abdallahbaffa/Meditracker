@@ -9,7 +9,7 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 
 echo '<head>';
-echo '<title>Primary Oaks Surgery - Home</title>';
+echo '<title>Primary Oaks Surgery</title>';
 echo '</head>';
 
 echo '<body>';
