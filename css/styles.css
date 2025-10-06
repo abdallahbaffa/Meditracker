@@ -1,0 +1,83 @@
+body {
+    background-color: #434343;
+}
+
+h2 {
+    margin-top: 60px; /* Adjust this value to move the heading lower */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style-type: none; /* removes bullet points from my list */
+    margin: 0; /* removes any default margin */
+    padding: 0; /* removes any default padding */
+    display: flex; /*Makes the content list horizontal, and stop vertical.*/
+    justify-content: flex-start; /*STOP VERTICAL. Justify.*/
+    background-color: #6e79c0; /*Background color.*/
+}
+
+nav li { /*creates spacing around li items in navbar*/
+    padding: 5px 20px 5px 20px ; /*top right bottom left*/
+}
+
+nav li:hover { /*Gives color to hovered lists.*/
+    background-color: #b77e55;
+}
+
+.topbar {
+    width: 100%;
+    background-color: #434343;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    display: inline-block; /* Makes sure the title sits nicely next to the logo */
+    vertical-align: middle;
+}
+
+.topbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+.topbar a:hover {
+    color: #b77e55;
+}
+
+.navi {
+    display: flex;
+    justify-content: center; /* This will center your links horizontally */
+    background-color: #636363;
+    padding: 10px 0;
+}
+
+#h3headings {
+    color: #D36161;
+}
+
+#ptext {
+    color: #D0BEBF;
+}
+
+#p2text {
+    color: #DEA16C;
+}
+
+#passcheck {
+    color: #6CC4C0;
+}
+
+#remember {
+    color: #EDA965;
+}
