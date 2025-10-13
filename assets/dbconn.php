@@ -1,4 +1,8 @@
 <?php
+// Optional: Start session here if needed by functions in this file, but usually not necessary
+// if (session_status() === PHP_SESSION_NONE) {
+//    session_start();
+// }
 
 function dbconnect_insert(){
     // The variables are defined locally inside the function
@@ -17,7 +21,7 @@ function dbconnect_insert(){
         // Return the connection object
         return $conn;
     } catch(PDOException $e) {
-        error_log("Database error in super_checker: " . $e->getMessage());
+        error_log("Database error in dbconnect_insert: " . $e->getMessage());
         throw $e;
     }
 }

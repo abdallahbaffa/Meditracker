@@ -2,6 +2,8 @@
 // Start a session to potentially store messages (optional, but good practice)
 session_start();
 
+echo '<link rel="stylesheet" href="/css/styles.css">'; // This line is likely redundant now, see comment below
+
 // Include your database connection function
 require_once '../assets/dbconn.php'; // Adjusted path to match your assets folder
 
@@ -127,15 +129,32 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 echo '<head>';
 echo '<title>Register - Primary Oaks Surgery</title>';
-// Link to the external stylesheet (assuming you'll add one later)
-// echo '<link rel="stylesheet" href="../css/styles.css">'; // Add this line when you create styles.css
-echo '<style>
-    .feedback-success { color: green; font-weight: bold; padding: 10px; border: 1px solid green; background-color: #e6ffe6; }
-    .feedback-error { color: red; padding: 10px; border: 1px solid red; background-color: #ffe6e6; }
-    .rules li { color: #555; font-size: 0.9em; }
-</style>';
+// Link to the external stylesheet (CRUCIAL: Move this here)
+echo '<link rel="stylesheet" href="../css/styles.css">'; // Adjust path relative to register.php location
+// Remove the PHP-generated link from earlier in the file if present
 echo '</head>';
 echo '<body>';
+
+// The dark header bar for the title - Using the existing .topbar class
+echo '<div class="topbar">';
+echo '<h1>Primary Oaks Surgery</h1>'; // This will be white due to .topbar h1
+echo '</div>';
+
+// The purple navigation bar - Using existing nav ul/li structure
+echo '<nav>';
+echo '<ul>';
+// The links from the first image
+echo '<li><a href="index.php">Home</a></li>';
+echo '<li><a href="register.php">Register</a></li>';
+echo '<li><a href="login.php">Login</a></li>';
+// Add other navigation links as needed for future features
+// echo '<li><a href="book.php">Book</a></li>';
+// echo '<li><a href="bookings.php">Bookings</a></li>';
+echo '</ul>';
+echo '</nav>';
+
+echo '<div class="portal-content">'; // Use your CSS class for layout
+
 echo '<h1>Create Your Account</h1>';
 echo '<hr>';
 
@@ -185,7 +204,10 @@ echo '<li>The <strong>first</strong> character cannot be a number or a special c
 echo '<li>The <strong>last</strong> character cannot be a special character.</li>';
 echo '</ul>';
 echo '<br>';
-echo '<a href="index.php">Back to Home</a>';
+// You might want to remove the direct links if you have the navigation bar
+// echo '<a href="index.php">Back to Home</a>';
+
+echo '</div>'; // close .portal-content
 echo '</body>';
 echo '</html>';
 ?>

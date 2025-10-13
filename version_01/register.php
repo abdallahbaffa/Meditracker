@@ -5,6 +5,9 @@ session_start();
 // Include your database connection function
 require_once '../assets/dbconn.php'; // Adjusted path to match your assets folder
 
+// Include your common functions if needed (e.g., user_message)
+// require_once '../assets/common.php';
+
 // --- 1. Initialize variables and Check for Submission ---
 $feedback = "";
 $password_raw = ""; // To hold the submitted password for re-display/checking
@@ -127,15 +130,21 @@ echo '<!DOCTYPE html>';
 echo '<html>';
 echo '<head>';
 echo '<title>Register - Primary Oaks Surgery</title>';
-// Link to the external stylesheet (assuming you'll add one later)
-// echo '<link rel="stylesheet" href="../css/styles.css">'; // Add this line when you create styles.css
-echo '<style>
-    .feedback-success { color: green; font-weight: bold; padding: 10px; border: 1px solid green; background-color: #e6ffe6; }
-    .feedback-error { color: red; padding: 10px; border: 1px solid red; background-color: #ffe6e6; }
-    .rules li { color: #555; font-size: 0.9em; }
-</style>';
+// Link to the external stylesheet (CRUCIAL: Move this here)
+echo '<link rel="stylesheet" href="../css/styles.css">'; // Adjust path relative to register.php location
+// Remove the PHP-generated link from earlier in the file if present
 echo '</head>';
 echo '<body>';
+
+// Include the topbar structure
+require_once '../assets/topbar.php';
+
+// Include the navigation structure
+require_once '../assets/nav.php';
+
+// Include the content wrapper structure
+require_once '../assets/content.php';
+
 echo '<h1>Create Your Account</h1>';
 echo '<hr>';
 
@@ -185,7 +194,10 @@ echo '<li>The <strong>first</strong> character cannot be a number or a special c
 echo '<li>The <strong>last</strong> character cannot be a special character.</li>';
 echo '</ul>';
 echo '<br>';
-echo '<a href="index.php">Back to Home</a>';
+
+// Close the content wrapper div (from content.php)
+echo '</div>';
+
 echo '</body>';
 echo '</html>';
 ?>

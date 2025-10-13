@@ -1,51 +1,45 @@
 <?php
+// Start session (good practice, even if not immediately used here)
+session_start();
 
-// Version 3: Separated CSS into an external file.
-// This page provides the basic structure and navigation links.
-
-// --- START OF HTML OUTPUT ---
-
-echo '<!DOCTYPE html>';
-echo '<html>';
-
-echo '<head>';
-echo '<title>Primary Oaks Surgery</title>';
-// Link to the external stylesheet
-echo '<link rel="stylesheet" href="/css/styles.css">';
-echo '</head>';
-
-echo '<body>';
-
-// The dark header bar for the title - Using the existing .topbar class
-echo '<div class="topbar">';
-echo '<h1>Primary Oaks Surgery</h1>'; // This will be white due to .topbar h1
-echo '</div>';
-
-// The purple navigation bar - Using existing nav ul/li structure
-echo '<nav>';
-echo '<ul>';
-// The links from the first image
-echo '<li><a href="index.php">Home</a></li>';
-echo '<li><a href="login.php">Login</a></li>';
-echo '</ul>';
-echo '</nav>';
-
-// Container for the content from the second image - Using a new class for styling
-echo '<div class="portal-content">';
-
-echo '<p>Welcome to the online portal.</p>';
-
-// The links from the second image, wrapped in a div for layout/color
-echo '<div class="portal-links">';
-echo '<a href="register.php">REGISTER</a>';
-echo '<br>';
-echo '<a href="login.php">LOGIN</a>';
-echo '</div>';
-
-echo '</div>'; // close .portal-content
-
-echo '</body>';
-
-echo '</html>';
-
+// Include your common functions if needed (e.g., user_message)
+// require_once 'assets/common.php';
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Primary Oaks Surgery</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Path relative to index.php -->
+</head>
+<body>
+
+<!-- Include the topbar structure -->
+<?php require_once '../assets/topbar.php'; ?>
+
+<!-- Include the navigation structure -->
+<?php require_once '../assets/nav.php'; ?>
+
+<!-- Include the content wrapper structure -->
+<?php require_once '../assets/content.php'; ?>
+
+<h1>Welcome to Primary Oaks Surgery</h1>
+<p>Manage your appointments securely online.</p>
+
+<!-- Portal Links (Register/Login) - Only show if NOT logged in -->
+<?php if (!isset($_SESSION['user_id'])): ?>
+    <div class="portal-links">
+        <a href="register.php">REGISTER</a>
+        <a href="login.php">LOGIN</a>
+    </div>
+<?php else: ?>
+    <!-- Show a welcome message and a link to the dashboard/homepage if logged in -->
+    <p>Hello, <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User', ENT_QUOTES, 'UTF-8'); ?>!</p>
+    <a href="home.php">Go to Dashboard</a> <!-- Or wherever the main logged-in page is -->
+    <!-- The logout link will be in the nav bar, handled by nav.php -->
+<?php endif; ?>
+
+<!-- Close the content wrapper div (from content.php) -->
+</div>
+
+</body>
+</html>
