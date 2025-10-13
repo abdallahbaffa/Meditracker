@@ -27,8 +27,6 @@ echo '<ul>';
 // The links from the first image
 echo '<li><a href="index.php">Home</a></li>';
 echo '<li><a href="login.php">Login</a></li>';
-echo '<li><a href="book.php">Book</a></li>';
-echo '<li><a href="bookings.php">Bookings</a></li>';
 echo '</ul>';
 echo '</nav>';
 
