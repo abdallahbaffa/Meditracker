@@ -1,10 +1,8 @@
 <?php
 // Start session
 session_start();
-
 // Unset all session variables
 $_SESSION = array();
-
 // If you want to destroy the session completely, also delete the session cookie.
 // Note: This will destroy the session, and not just the session data!
 if (ini_get("session.use_cookies")) {
@@ -14,10 +12,8 @@ if (ini_get("session.use_cookies")) {
         $params["secure"], $params["httponly"]
     );
 }
-
 // Destroy the session
 session_destroy();
-
 // Redirect back to the homepage or login page
 header("Location: index.php");
 exit();

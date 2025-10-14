@@ -16,6 +16,8 @@ if (session_status() === PHP_SESSION_NONE) {
         <li><a href="login.php">Login</a></li>
         <!-- Conditionally show Logout link if user is logged in -->
         <?php if (isset($_SESSION['user_id'])): ?>
+            <li><a href="book.php">Book</a></li>
+            <li><a href="bookings.php">Bookings</a></li>
             <li><a href="logout.php">Logout</a></li>
         <?php endif; ?>
         <!-- Add other navigation links as needed for future features -->
