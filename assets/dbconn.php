@@ -9,7 +9,7 @@ function dbconnect_insert(){
     $servername = "localhost";
     $dbusername = "root"; #SHOULD NOT USE ROOT TO ACCESS A DATABASE
     $dbpassword = "";
-    $dbname = "primary_oaks_db"; // <-- Make sure this DB exists
+    $dbname = "primary_oaks"; // <-- Make sure this DB exists
 
     /*THESE THINGS SHOULD NOT BE STORED IN PLAIN TEXT!! VERY INSECURE!!*/
 
@@ -28,5 +28,5 @@ function dbconnect_insert(){
 
 // !!! IMPORTANT: You must call the function to get the connection
 // Example of calling the function later in your script:
-// $connection = dbconnect_insert();
+// $conn = dbconnect_insert();
 ?>
